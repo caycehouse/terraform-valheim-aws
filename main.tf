@@ -59,6 +59,7 @@ module "server" {
   subnet_id = module.network.valheim_subnet
   volume_id = module.storage.valheim_volume
   user_data = file("./scripts/bootstrap.sh")
+  key_name = var.key_name
 }
 
 module "lambdas" {

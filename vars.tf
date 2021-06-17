@@ -38,3 +38,9 @@ variable "volume_type" {
   type        = string
   default     = "gp3"
 }
+
+variable "key_name" {
+  description = "SSH Keypair name to use"
+  type        = string
+  default     = ""
+}
