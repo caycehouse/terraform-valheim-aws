@@ -58,7 +58,7 @@ module "server" {
   security_groups = module.security_groups.valheim_security_groups
   subnet_id = module.network.valheim_subnet
   volume_id = module.storage.valheim_volume
-  user_data = file("./scripts/bootstrap.sh")
+  user_data = templatefile("./scripts/bootstrap.tpl", { valheim_pass = var.valheim_pass })
   key_name = var.key_name
 }
 

@@ -44,3 +44,9 @@ variable "key_name" {
   type        = string
   default     = ""
 }
+
+variable "valheim_pass" {
+  description = "The password to use for the Valheim server"
+  type        = string
+  default     = ""
+}
