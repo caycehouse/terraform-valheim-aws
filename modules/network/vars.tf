@@ -1,0 +1,1 @@
+variable "availability_zone" {}
