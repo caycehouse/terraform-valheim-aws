@@ -25,6 +25,7 @@ docker run -d \
     --stop-timeout 120 \
     --restart always \
     -p 2456-2457:2456-2457/udp \
+    -p 80:80/tcp \
     -v /opt/valheim/config:/config \
     -v /opt/valheim/data:/opt/valheim \
     -e SERVER_NAME="The Fryer's Valheim Server" \
