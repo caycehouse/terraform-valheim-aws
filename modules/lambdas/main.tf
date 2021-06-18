@@ -10,6 +10,7 @@ module "lambda_dns" {
   description = "Automatically updates route53 dns entryfor Valheim on instance start"
   handler = "index.handler"
   runtime = "nodejs14.x"
+  publish = true
 
   source_path = "${path.module}/valheim-dns"
 
@@ -53,6 +54,7 @@ module "lambda_start" {
   description = "A start instance function for Valheim"
   handler = "index.handler"
   runtime = "nodejs14.x"
+  publish = true
 
   source_path = "${path.module}/valheim-start"
 
@@ -85,6 +87,7 @@ module "lambda_autostop" {
   description = "An auto-stop function for Valheim"
   handler = "index.handler"
   runtime = "nodejs14.x"
+  publish = true
 
   source_path = "${path.module}/valheim-autostop"
 
