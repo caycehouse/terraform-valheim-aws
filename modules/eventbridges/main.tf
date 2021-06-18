@@ -4,7 +4,7 @@ module "eventbridge_dns" {
   create_bus = false
 
   rules = {
-    ec2_run = {
+    valheim_ec2_run = {
       description   = "EC2InstanceRunning"
       event_pattern = jsonencode({
             "source": ["aws.ec2"],
@@ -18,7 +18,7 @@ module "eventbridge_dns" {
   }
 
   targets = {
-    ec2_run = [
+    valheim_ec2_run = [
       {
         name = "Invoke lambda_dns"
         arn  = var.lambda_dns_arn
@@ -33,13 +33,13 @@ module "eventbridge_autostop" {
   create_bus = false
 
   rules = {
-    stop = {
+    valheim_stop = {
       schedule_expression = "cron(0/30 * * * ? *)"
     }
   }
 
   targets = {
-    stop = [
+    valheim_stop = [
       {
         name = "Invoke lambda_autostop"
         arn  = var.lambda_autostop_arn
