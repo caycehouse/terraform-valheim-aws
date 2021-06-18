@@ -2,7 +2,7 @@ module "records" {
   source  = "terraform-aws-modules/route53/aws//modules/records"
   version = "~> 2.0"
 
-  zone_name = var.hosted_zone_id
+  zone_id = var.hosted_zone_id
 
   records = [
     {
