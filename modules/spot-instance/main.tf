@@ -10,6 +10,7 @@ data "aws_ami" "amazon_linux_2" {
 }
 
 resource "aws_spot_instance_request" "valheim_instance" {
+    name = "Valheim"
     ami = data.aws_ami.amazon_linux_2.id
     instance_type = var.instance_type
     subnet_id = var.subnet_id
