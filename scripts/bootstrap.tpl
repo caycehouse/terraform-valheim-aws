@@ -2,7 +2,7 @@
 
 # Install docker
 yum update -y
-yum install docker
+yum install -y docker
 
 # Enable and start docker
 systemctl --now enable docker
