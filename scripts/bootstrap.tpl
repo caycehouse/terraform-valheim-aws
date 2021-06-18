@@ -23,7 +23,7 @@ docker run -d \
     --name valheim-server \
     --cap-add=sys_nice \
     --stop-timeout 120 \
-    -- restart always \
+    --restart always \
     -p 2456-2457:2456-2457/udp \
     -v /opt/valheim/config:/config \
     -v /opt/valheim/data:/opt/valheim \
