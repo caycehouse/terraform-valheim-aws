@@ -98,6 +98,10 @@ module "lambda_autostop" {
     }
   }
 
+  environment_variables = {
+    record_name = var.record_name
+  }
+
   attach_policy_json = true
   policy_json        = <<EOF
 {

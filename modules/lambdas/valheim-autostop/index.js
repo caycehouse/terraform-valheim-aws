@@ -3,9 +3,9 @@ const ec2 = new EC2();
 
 exports.handler = function (event, context) {
     const instanceId = process.env.instance_id;
-    const instanceIp = process.env.instance_ip;
+    const recordName = process.env.record_name;
 
-    https.get(instanceIp, res => {
+    https.get(recordName, res => {
         res.setEncoding("utf8");
         let body = "";
         res.on("data", data => {
