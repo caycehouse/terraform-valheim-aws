@@ -60,6 +60,7 @@ module "server" {
   volume_id = module.storage.valheim_volume
   user_data = templatefile("./scripts/bootstrap.tpl", { valheim_pass = var.valheim_pass })
   key_name = var.key_name
+  spot_price = var.spot_price
 }
 
 module "lambdas" {

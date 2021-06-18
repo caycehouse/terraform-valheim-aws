@@ -21,6 +21,7 @@ resource "aws_spot_instance_request" "valheim_instance" {
     user_data = var.user_data
     iam_instance_profile = var.iam_instance_profile
     instance_interruption_behaviour = "stop"
+    spot_price = var.spot_price
 
     tags = {
       Name = "Valheim"

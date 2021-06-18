@@ -50,3 +50,9 @@ variable "valheim_pass" {
   type        = string
   default     = ""
 }
+
+variable "spot_price" {
+  description = "The spot price to use"
+  type        = string
+  default     = "0.05"
+}
