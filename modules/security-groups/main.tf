@@ -17,6 +17,10 @@ module "valheim_sg" {
       rule        = "ssh-tcp"
       cidr_blocks = var.your_ip
     },
+    {
+      rule        = "http-80-tcp"
+      cidr_blocks = var.vpc_cidr_block
+    }
   ]
 
   egress_with_cidr_blocks = [

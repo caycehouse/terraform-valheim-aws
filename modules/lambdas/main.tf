@@ -91,6 +91,8 @@ module "lambda_autostop" {
 
   source_path = "${path.module}/valheim-autostop"
 
+  vpc_security_group_ids = [var.vpc_security_group_id]
+
   allowed_triggers = {
     ScheduledRule = {
       principal  = "events.amazonaws.com"

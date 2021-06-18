@@ -1,11 +1,12 @@
 const { EC2 } = require('aws-sdk');
+const http = require('http');
 const ec2 = new EC2();
 
 exports.handler = function (event, context) {
     const instanceId = process.env.instance_id;
     const recordName = process.env.record_name;
 
-    https.get(recordName, res => {
+    http.get(`http://${recordName}/status.json`, res => {
         res.setEncoding("utf8");
         let body = "";
         res.on("data", data => {
