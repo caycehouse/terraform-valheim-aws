@@ -1,7 +1,7 @@
 output "valheim_vpc" {
-  value = aws_vpc.valheim_vpc.id
+  value = module.vpc.vpc_id
 }
 
 output "valheim_subnet" {
-  value = aws_subnet.valheim_subnet.id
+  value = module.vpc.public_subnets[0]
 }
