@@ -34,7 +34,7 @@ module "lambda_dns" {
     {
       "Effect": "Allow",
       "Action": "ec2:DescribeInstances",
-      "Resource": "${data.aws_instance.valheim_instance.arn}"
+      "Resource": "*"
     },
     {
       "Effect": "Allow",
