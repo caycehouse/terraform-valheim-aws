@@ -18,4 +18,14 @@ module "valheim_sg" {
       cidr_blocks = var.your_ip
     },
   ]
+
+  egress_with_cidr_blocks = [
+    {
+        from_port   = 0
+        to_port     = 0
+        protocol    = -1
+        description = "Allow all egress"
+        cidr_blocks = "0.0.0.0/0"
+    }
+  ]
 }
