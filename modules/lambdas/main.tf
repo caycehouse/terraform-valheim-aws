@@ -99,6 +99,7 @@ module "lambda_autostop" {
   }
 
   environment_variables = {
+    instance_id = var.instance_id
     record_name = var.record_name
   }
 
