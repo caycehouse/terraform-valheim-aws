@@ -71,6 +71,7 @@ module "lambdas" {
   eventbridge_autostop_arn = module.eventbridges.eventbridge_autostop_arn
   eventbridge_dns_arn = module.eventbridges.eventbridge_dns_arn
   vpc_security_group_id = module.security_groups.security_group_id
+  vpc_subnet_id = module.network.valheim_subnet
 }
 
 module "eventbridges" {
