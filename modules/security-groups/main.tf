@@ -19,7 +19,7 @@ module "valheim_sg" {
     },
     {
       rule        = "http-80-tcp"
-      cidr_blocks = var.vpc_cidr_block
+      cidr_blocks = "0.0.0.0/0"
     }
   ]
 

@@ -42,7 +42,6 @@ module "security_groups" {
   source  = "./modules/security-groups"
   your_ip = var.your_ip
   vpc_id  = module.network.valheim_vpc
-  vpc_cidr_block = module.network.vpc_cidr_block
 }
 
 module "storage" {
@@ -70,8 +69,6 @@ module "lambdas" {
   instance_id = module.server.valheim_instance.spot_instance_id
   eventbridge_autostop_arn = module.eventbridges.eventbridge_autostop_arn
   eventbridge_dns_arn = module.eventbridges.eventbridge_dns_arn
-  vpc_security_group_id = module.security_groups.security_group_id
-  vpc_subnet_id = module.network.valheim_subnet
 }
 
 module "eventbridges" {
