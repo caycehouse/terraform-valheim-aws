@@ -34,7 +34,7 @@ module "eventbridge_autostop" {
 
   rules = {
     stop = {
-      schedule_expression = "cron(*/30 * * * * *)"
+      schedule_expression = "cron(0/30 * * * ? *)"
     }
   }
 
