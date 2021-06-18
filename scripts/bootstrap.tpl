@@ -29,4 +29,5 @@ docker run -d \
     -v /opt/valheim/data:/opt/valheim \
     -e SERVER_NAME="The Fryer's Valheim Server" \
     -e SERVER_PASS="${valheim_pass}" \
+    -e STATUS_HTTP=true \
     lloesche/valheim-server
