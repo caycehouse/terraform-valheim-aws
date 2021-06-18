@@ -32,3 +32,10 @@ resource "aws_volume_attachment" "valheim_ebs_att" {
   volume_id   = var.volume_id
   instance_id = aws_spot_instance_request.valheim_instance.spot_instance_id
 }
+
+resource "aws_ec2_tag" "valheim_tag" {
+  resource_id = aws_spot_instance_request.valheim_instance.spot_instance_id
+
+  key      = "Name"
+  value    = "Valheim"
+}
