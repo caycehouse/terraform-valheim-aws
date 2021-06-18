@@ -67,6 +67,13 @@ module "lambdas" {
   hosted_zone_id = var.hosted_zone_id
   record_name = var.record_name
   instance_id = module.server.valheim_instance.spot_instance_id
-  lambda_dns_iam = module.iam.valheim_lambda_dns_iam
-  lambda_startstop_iam = module.iam.valheim_lambda_startstop_iam
+  eventbridge_autostop_arn = module.eventbridges.eventbridge_autostop_arn
+  eventbridge_dns_arn = module.eventbridges.eventbridge_dns_arn
+}
+
+module "eventbridges" {
+  source = "./modules/eventbridges"
+  lambda_dns_arn = module.lambdas.lambda_dns_arn
+  lambda_autostop_arn = module.lambdas.lambda_autostop_arn
+  instance_id = module.server.valheim_instance.spot_instance_id
 }
