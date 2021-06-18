@@ -1,3 +1,3 @@
-output "valheim_security_groups" {
-    value = [aws_security_group.valheim_sg.id]
+output "security_group_id" {
+    value = module.valheim_sg.security_group_id
 }

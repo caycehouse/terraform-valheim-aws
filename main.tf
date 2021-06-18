@@ -55,7 +55,7 @@ module "storage" {
 module "server" {
   source = "./modules/spot-instance"
   instance_type = var.instance_type
-  security_groups = module.security_groups.valheim_security_groups
+  security_groups = [module.security_groups.security_group_id]
   subnet_id = module.network.valheim_subnet
   volume_id = module.storage.valheim_volume
   user_data = templatefile("./scripts/bootstrap.tpl", { valheim_pass = var.valheim_pass })

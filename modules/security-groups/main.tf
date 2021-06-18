@@ -1,30 +1,21 @@
-resource "aws_security_group" "valheim_sg" {
-  name        = "valheim-sg-01"
-  description = "The Security Group for valheim-01"
+module "valheim_sg" {
+  source = "terraform-aws-modules/security-group/aws"
+
+  name        = "valheim"
+  description = "Security group for valheim with custom ports open within VPC"
   vpc_id      = var.vpc_id
 
-  ingress {
-    description = "Allow anybody to connect to VALHEIM"
-    from_port   = 2456
-    to_port     = 2558
-    protocol    = "udp"
-    cidr_blocks = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
-
-  ingress {
-    description = "Allow SSH from Home"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = [var.your_ip]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
+  ingress_with_cidr_blocks = [
+    {
+        from_port   = 2456
+        to_port     = 2458
+        protocol    = "udp"
+        description = "Valheim"
+        cidr_blocks = "0.0.0.0/0"
+    },
+    {
+      rule        = "ssh-tcp"
+      cidr_blocks = var.your_ip
+    },
+  ]
 }
