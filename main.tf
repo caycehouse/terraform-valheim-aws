@@ -78,9 +78,3 @@ module "eventbridges" {
   lambda_autostop_arn = module.lambdas.lambda_autostop_arn
   instance_id = module.server.valheim_instance.spot_instance_id
 }
-
-module "route53" {
-  source = "./modules/route53"
-  hosted_zone_id = var.hosted_zone_id
-  instance_ip = module.server.valheim_instance.public_ip
-}
