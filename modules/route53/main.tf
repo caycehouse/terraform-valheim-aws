@@ -6,7 +6,7 @@ module "records" {
 
   records = [
     {
-      name    = "valheim"
+      name    = "vh"
       type    = "A"
       ttl     = 60
       records = [
