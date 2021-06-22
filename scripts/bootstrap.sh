@@ -31,7 +31,6 @@ docker run -d \
     -e SERVER_NAME="The Fryer's Valheim Server" \
     -e VALHEIM_PLUS=true \
     -e SERVER_PASS="" \
-    -e SERVER_PUBLIC=false \
     -e VPCFG_Server_enabled=true \
     -e VPCFG_Server_enforceMod=false \
     -e VPCFG_Server_disableServerPassword=true \
