@@ -45,12 +45,6 @@ variable "key_name" {
   default     = ""
 }
 
-variable "valheim_pass" {
-  description = "The password to use for the Valheim server"
-  type        = string
-  default     = ""
-}
-
 variable "spot_price" {
   description = "The spot price to use"
   type        = string
